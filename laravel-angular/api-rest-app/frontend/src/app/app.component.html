@@ -1,0 +1,63 @@
+<h1>Show all records</h1>
+<!--Get All-->
+<tr *ngFor="let element of httpdata">
+  <td>{{element.id}}.- Item: {{element.name}} Color: {{element.color}} Total: {{element.total}}</td>
+</tr>
+<!--Get By Id-->
+<h1>Search by Id</h1>
+<form class="form" (submit)="getOneTask(taskId.value);">
+  <div class="form-group">
+    <input #taskId type="text" class="form-control" placeholder="Insert Id">
+  </div>
+  <input type="submit" value="submit" class="btn btn-success">
+</form>
+<h3>Result</h3>
+<tr *ngFor="let element1 of data_id">
+  <td>Item: {{element1.name}} Color: {{element1.color}} Total: {{element1.total}}</td>
+</tr>
+<!--Post-->
+<h1>Save a record</h1>
+<h3>Insert data</h3>
+<form  class="form" >
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Insert Name" name="name" [(ngModel)]="task.name">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Insert Color" name="color" [(ngModel)]="task.color">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Insert Total"  name="total" [value]="3" [(ngModel)]="task.total" >
+    </div>
+    <input type="submit" value="submit" class="btn btn-success" (click)="postOneTask();">
+  </form>
+  <div *ngIf="flag0">
+      <div class="alert alert-warning">Empty places</div>
+  </div>
+  <!--Put and Delete-->
+  <h1>Update and Delete</h1>
+  <form class="form" (submit)="getOneTask1(taskColor.value)">
+    <input #taskColor type="text" class="form-control" placeholder="Insert color's name">
+    <input type="submit" value="Search" class="btn btn-success" >
+  </form>
+  <table class="table" width="100%">
+    <tr>
+      <th class="text-left" width="10%">Number</th>
+      <th class="text-left" width="20%">Item</th>
+      <th class="text-left">Color</th>
+      <th class="text-left">Total</th>
+      <th class="text-left">Action</th>
+    </tr>
+    <tr *ngFor="let element of data_color">
+      <td class="text-left">{{element.id}}</td>
+      <td class="text-left">
+          <a (click)="enableUpdate(element)">
+            <span *ngIf="element!==taskEdit">{{element.name}}</span> 
+            <input *ngIf="element===taskEdit" (blur)="updateOneTask()" (keyup.enter)="updateOneTask" [(ngModel)]="element.name">        
+          </a>          
+      </td>
+      <td class="text-left">{{element.color}}</td>
+      <td class="text-left">{{element.total}}</td>
+      <td class="text-left"><button class="btn btn-danger" (click)="deleteOneTask(element)">Delete</button></td>
+    </tr>
+  </table>
+  
