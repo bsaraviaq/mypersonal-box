@@ -1,0 +1,5 @@
+main
+	Timer0_Int_Init
+interrupt
+	ADC_Read
+		Delay_22us

@@ -1,0 +1,32 @@
+header{
+	background-color: #a60;
+	width:1000px;
+	height: 60px;
+}
+nav{
+	background-color: #0bb;
+	width:1000px;
+	height: 60px;
+}
+summary{
+	background-color: #f55;
+	width:200px;
+	height: 200px;
+	float:left;
+}
+section{
+	background-color: #b0b;
+	width:200px;
+	height: 100px;	
+}
+article{
+	background-color: #fa0;
+	width:200px;
+	height: 100px;
+}
+aside{
+	background-color: #f55;
+	width:800px;
+	height: 200px;
+	float:left;
+}

@@ -1,0 +1,32 @@
+.header{
+	background-color: #aa0;
+	width:1000px;
+	height: 60px;	
+}
+.nav{
+	background-color: #0bb;
+	width:1000px;
+	height: 60px;
+}
+.nav{
+	display:flex;
+	flex-flow: row;
+}
+.left{
+	background-color: #900;
+	width:200px;
+	height: 300px;
+	float:left;	
+}
+.center{
+	background-color: #090;
+	width:600px;
+	height: 300px;
+	float:left;	
+}
+.right{
+	background-color: #009;
+	width:200px;
+	height: 300px;
+	float:left;	
+}

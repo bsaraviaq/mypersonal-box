@@ -1,0 +1,14 @@
+h2{
+	color: #0f0;
+	background-color: #ff0; 
+}
+.par{
+	background-color: #000;
+	color: #fff;
+	padding: 20px;
+	margin: 20px;
+}
+#initial{
+	background-color: #f00;
+	color: #000;
+}
